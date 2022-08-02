@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="RGraph/libraries/RGraph.svg.common.core.js"></script>
+<script src="RGraph/libraries/RGraph.svg.common.tooltips.js"></script>
+<script src="RGraph/libraries/RGraph.svg.rose.js"></script>
+<link rel="stylesheet" href="css/index.css">
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 20px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
+  
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+<style>
+body {
+    font-family: 'Roboto Mono';
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="site-header">
+    <!--div class= "logo ">
+    <a href="https://web.pccc.edu/"><img alt="Passaic County Community College" data-src="https://web.pccc.edu/wp-content/themes/devsiteurl-base-theme/images/logo.gif" class=" lazyloaded" src="https://web.pccc.edu/wp-content/themes/devsiteurl-base-theme/images/logo.gif" ></a>
+    </div-->
+    <h1 id ="heading-d">In association with PCCC STEM</h1>
+    <h1 id ="heading-m">PCCC</h1>
+</div>
+
+<div class ="text" id="text">
+  <h1 class="title">CFP</h1>
+  <p></p>
+</div>
+
+<form class="row desktop-form" id="form">
+
+<div class="form-design slidecontainer col">
+
+  <h2 class="FET_0">Food <sub>& Clothing</sub></h2>
+  <div class="par">
+  <h3 onclick="F_infoCard_0()">Vegetables/Fruits : Meats</h3>
+    <p>I'm eating:</p>
+    <p id="f0_display"></p>
+  <input type="range" min="0" max="5" value="0" class="slider" id="f0">
+  </div>
+
+  <div class="par">
+    <h3 onclick="F_infoCard_2()">Meat Eating Habits</h3>
+    <p>I'm Mostly Eating:</p>
+    <p id="f2_display"></p> 
+    <div class="F_C_2" id="F_card_2">
+    </div>
+    <input type="range" min="0" max="5" value="0" class="slider" id="f2">
+  </div>
+
+  <div class="par">
+    <h3 onclick="F_infoCard_1()">Clothing</h3>
+    <div class ="F_C_1" id="F_card_1">
+    </div>
+    <p>My Clothing Habits:</p>
+    <p id="f1_display"></p>
+    <input type="range" min="0" max="5" value="0" class="slider" id="f1">
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+<div class="form-design slidecontainer col">
+  <h2 class="FET_0">Transportation</h2>
+  
+<!--
+  SET PARAM FOR MOTOR VEHICLES
+  GAS 
+  MILEAGE
+-->
+  <div class="par">
+    <h3 onclick="T_infoCard_0()">Private Automobile</h3>
+    <p>How much of your travel is by a private vehicle(including rideshare or taxis):</p>
+    <p id = "t0_display"></p>
+    <div class="T_C" id="T_card">
+    </div>
+    <input type="range" min="0" max="5" value="0" class="slider" id="t0">
+  </div>
+
+  <div class="par">
+    <h3 onclick="T_infoCard_1()">Public Transportation</h3>
+    <p>How much of your travel is by public transportation?</p>
+    <p id ="t1_display"></p>
+    <div class="T_C_1" id="T_card_1">
+    </div>
+    <input type="range" min="0" max="5" value="0" class="slider" id="t1">
+  </div>
+
+</div>
+
+
+<div class="form-design slidecontainer col">
+
+  <h2 class="FET_0">Energy</h2>
+  
+  <div class="par">
+    <h3 onclick="E_infoCard_0()">Appliances</h3>
+    <p>My Household Appliance Use:</p>
+    <p id="e0_display"></p><br>
+    <input class="slider" type="range" id="e0" min="0" max="5" value="0"><br>
+  </div>
+
+  <div class="par">
+    <h3 onclick="E_infoCard_1()">Electronics</h3>
+    <div class="E_C_1" id="E_card_1"></div>
+    <p>My Devices:</p>
+    <p id="e1_display"></p>
+      <input type="range" min="0" max="5" value="0" class="slider" id="e1">
+  </div>
+
+</div>
+
+<!--p>Value: <span id="demo"></span></p-->
+<input onclick="charting()" type="button" class=" b btn btn-primary">
+</form>
+
+
+
+
+
+
+
+<div class='chart-margin'>
+  
+
+    <!-- <button onclick="index()" type="button" class="" id="toggle-results">
+      Index
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-activity" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+      </svg>
+    </button> -->
+
+    <div class="chart" id="chart-container">
+
+    </div>
+    <p id ="CFP-form"></p>
+
+
+</div>
+
+
+<div class="index-result"  id="index">
+  <h1 id="index-header">CFP Index</h1>
+
+  <div class=""> 
+    <button id="prev" class="prev" onclick="prev()"></button> 
+    <button id="next" class="next" onclick="next()"></button>
+  </div>
+
+  
+  <div id="index-0" value="0">
+    
+    <h2>Ways to reduce your footprint:</h2>
+    <h3>Food and Clothing</h3>
+      <ol>
+        <li><h4 onclick="F0_Over()" onmouseout="F0_Out()" style=" cursor: pointer;" id="fet_tip">Eat Less Beef</h4></li>
+          <ul id="f_list_0">
+            <li>
+              1kg of beef is equal to 99.5kgCO<sub>2</sub>eq. In other words, 1kg of beef is producing nearly 100kg of GHG(measured in carbon dioxide). This varies throughout the supply chain stage(99.5kgCO<sub>2</sub> being the sum of all stages).
+            </li>
+            <li>
+              Fermentation or digestion of food in animals such as cattle, and animal wastes are the leading sources of GHG(methane in this case) from agricultural activities.
+            </li>
+            <li>
+              Other meats such as chicken or seafood are good alternatives since they do not emit as much GHG as beef.
+            </li>
+          </ul>
+          <li><h4 onclick="F1_Over()" onmouseout="F1_Out()" style=" cursor: pointer" id="fet_tip">Eat More Fruits & Veggies</h4></li>
+          <ul id="f_list_1">
+            <li>
+              GHG emission is siginificantly lower.
+            </li>
+            <li>
+              For example, 1kg of rice is equal to 4.45kgCO<sub>2</sub>eq. Citrus fruits are merely emitting 0.39kgCO<sub>2</sub>eq. 
+            </li>
+            <li>
+              In addition, they're good for you!
+            </li>
+          </ul>
+          <li><h4 onclick="F2_Over()" onmouseout="F2_Out()" style=" cursor: pointer" id="fet_tip">Pay Attention to Clothing.</h4></li>
+          <ul id="f_list_2">
+            <li>Thrifted clothing will help reduce needless manufacturing which often puts out GHG.</li>
+            <li>Rather than throwing away old clothing, give them away. Whether it's a friend, a relative, or a charitable organization.</li>
+            <li>If you absolutely have to buy new clothing, perhaps consider looking into which brands are more eco-friendly in their manufacturing and use of materials.</li>
+          </ul>
+        </li>
+      </ol>
+  </div>   
+
+  <div id="index-1" value="1">
+    <h3>Energy</h3>
+      <ol>
+        <li><h4 onclick="E0_Over()" onmouseout="E0_Out()" style=" cursor: pointer;" id="fet_tip">Be Mindful of Your Devices.</h4></li>
+        <ul id="e_list_0">
+          <li>
+            Donate devices that are old as opposed to throwing them away(which contributes to waste).
+          </li>
+          <li>
+            Reduce needless use of devices. For example, gaming with multiple screens and consoles simultaneously, cryptocurrency mining(a huge emitter of CO<sub>2</sub>), or doing work with more screens/or computers than neccessary.
+          </li>
+        </ul>
+        <li><h4 onclick="E1_Over()" onmouseout="E1_Out()" style=" cursor: pointer;" id="fet_tip">Monitor Appliance Usage.</h4></li>
+        <ul id="e_list_1">
+          <li>
+            Appliances are the second largest contributor of GHG emissions in New Jersey. Residential and commercial buildings account for this.
+          </li>
+          <li>
+            Use appliances that are Energy Star Certified. This means they are certified by the government with on  1-100 scale. The calculation is based on data that is gathered regionally. For example, weather, GHG emission, or over all air quality. No product should have a rating that is less than 75.
+          </li>
+          <li>
+            Again, donate what you don't need. The Salvation Army would be a good organization to refer to. In addition, a simple internet search will yield results as to whom old appliances could be donated. Simply throwing them in a trash heap will add more to waste.
+          </li>
+        </ul>
+      </ol>
+  </div>
+  
+  <div id="index-2" value="2">
+    <h2>Transportation</h2>
+    <ol>
+      <li><h4 onclick="T0_Over()" onmouseout="T0_Out()" style=" cursor: pointer;" id="fet_tip">Reduce Use of Private Automobile.</h4></li>
+      <ul id="t_list_0">
+        <li>
+          With the New Jersey Global Warming Response Act in effect, access to public transit is expected to increase. In addition, work from home opportunities will be incentivized. This is expected to improve between now(2022) and 2050.
+        </li>
+        <li>
+          If you have no other choice, use natural gas as opposed to diesel.
+        </li>
+        <li>
+          For the time being, electric cars are not an excellent alternative because the manufacturing of lithium ion batteries is generting more GHG emisiion.
+        </li>
+      </ul>
+      <li><h4 onclick="T1_Over()" onmouseout="T1_Out()" style=" cursor: pointer;" id="fet_tip">Work From Home if Possible.</h4></li>
+      <ul id="t_list_1">
+        <li>
+          Not all have this luxury, but for those who do, it is strongly recommended. In New Jersey, the mass transit system(private and commercial vehicles) are the largest contributor of GHG. Even the change from diesel to natural from the NJT has not been enough to mitigate the effects of CO<sub>2</sub>(and other GHG) emision. 41% of New Jersey's GHG is from mass transit.
+        </li>
+        <li>
+          New Jersey is a hub of imported/exported goods. These goods often through the Ambrose Anchorage in container shipments and are dispersed nationally via freight truck delivery. 
+        </li>
+      </ul>      
+    </ol>
+  </div>   
+  
+  
+</div>
+
+
+<footer class='col foot'>
+  <h2>Sources:</h2>
+  <a target="_blank" href="ttps://drive.google.com/file/d/1PlYqLk9F1zWuc4tkN0JAXaXBsHx1l7Q_/view?usp=sharing"><p>NJ Global Warming Response Act.</p></a>
+  <br>
+  <a target="_blank" href="https://drive.google.com/file/d/1C1DXCuZvYzSGzzxwoHy_7JElZZHZYDQI/view?usp=sharing"><p>NJDEP | Scientific Report On Climate Change. 
+  </p></a>
+  <br>
+  <a target="_blank" href="https://ourworldindata.org/environmental-impacts-of-food"><p>Hannah Ritchie, Max Roser, Environmental Impact of Food Production.</p></a>
+  <br>
+  <a target="_blank" href="https://ourworldindata.org/exporting-deforestation"><p>Hannah Ritchie, Do rich countries import deforestation from overseas?</p></a>
+  <br>
+  <a target="_blank" href="https://ourworldindata.org/drivers-of-deforestation"><p>Hannah Ritchie, Max Roser, Drivers of Deforestation.</p></a>
+
+  <!--
+    SOURCE ON DIET FOR LOWERING CFP
+    https://ourworldindata.org/food-choice-vs-eating-local
+  -->>
+</footer>
+
+<!--script src="js/radar.js"></script-->
+<script src="js/radarsimplified.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,339 @@
+
+    
+/* Styling the Body element i.e. Color,
+Font, Alignment */
+body {
+    background-color: #fff;
+    font-family: Verdana;
+    text-align: center;
+}
+
+/* Styling the Form (Color, Padding, Shadow) */
+
+.text, .desktop-form{
+    padding: 50px;
+}
+
+.text{
+    text-align: center;
+    margin: 50px;
+}
+.form-design {
+    background-color: #00ff37fe;
+    padding: 5px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+    margin: 20px;
+    border-radius: 25px;  
+    border: solid black 2px;
+}
+.form-design h2{
+    text-align: center;
+}
+.slider{
+    border-left: 25px solid rgb(55, 0, 255);
+    border-right: 25px solid rgb(255, 0, 0);
+}
+.form-design h3{
+    border: solid black 1px;
+}
+.form-design h3, h4{
+    padding: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+.chart{
+    height: 600px;
+    width: 100%;
+    display: none;
+}
+
+.mobile-form{
+    display: none;
+}
+.heading-d{
+    z-index: 2;
+}
+
+.tree{
+    margin: 75px;
+}
+.F_C, .F_C_1, .F_C_2, .F_C_3, .F_C_4, .F_C_5{
+    display: none;
+}
+.E_C, .E_C_1, .E_C_2, .E_C_3, .E_C_4, .E_C_5{
+    display: none;
+}
+.T_C, .T_C_1, .T_C_2, .T_C_3, .T_C_4, .T_C_5{
+    display: none;
+}
+.gas{
+    border-top: solid 1px black;
+    margin-top: 10px;
+}
+
+.par{
+    background-color: rgba(38, 0, 255, 0.215);
+    padding: 10px;
+    margin: 2.4px;
+    border-radius: 25px;
+    font-size: 15px;
+}
+
+
+.par_sub{
+    margin: 20px;
+}
+.par_sub_sub{
+    border-left: solid 1px black;
+    padding: 5px;
+}
+
+/* Styling form-control Class */
+.form-control {
+    text-align: left;
+    margin-bottom: 25px;
+}
+#demo{
+    padding: 10px;
+    height: 20px;
+    border: 2px solid black;
+}
+
+/* Styling form-control Label */
+.form-control label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Styling form-control input,
+select, textarea */
+.form-control input,
+.form-control select,
+.form-control textarea {
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    padding: 10px;
+    display: block;
+    width: 95%;
+}
+
+/* Styling form-control Radio
+button and Checkbox */
+.form-control input[type="radio"],
+.form-control input[type="checkbox"] {
+    display: inline-block;
+    width: auto;
+}
+
+/* Styling Button */
+.button {
+    background-color: #05c46b;
+    border: 1px solid #777;
+    border-radius: 2px;
+    font-family: inherit;
+    font-size: 21px;
+    display: block;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.subscript{
+    font-size: 20px;
+}
+
+.F, .E, .T {
+    text-align: left;
+    padding: 10px;
+}
+.F:hover, .E:hover, .T:hover{
+    cursor: pointer;
+    background-color: rgba(255,255,255,.25);
+}
+
+.site-header {
+   position: fixed;
+   width: 100%;
+   top: 0px;
+   background: #08121A;
+   z-index: 1;
+   color: white;
+   width: 100%;
+}
+.logo{
+   position: fixed;
+   left: 0px;
+   top: 0px;
+}
+.logo-m{
+   display: none;
+}
+a{
+   text-decoration: none;
+   color: white;
+}
+a:hover{
+   color: white;
+}
+
+.chart-margin{
+    margin: 100px;
+}
+.index-result {
+    border: black solid 1px;
+    background-color: white;
+    display: none;
+    padding: 25px;
+    margin: 50px;
+    overflow: scroll;
+    height: 500px;
+    z-index: 1;
+    text-align: center;
+}
+
+::-webkit-scrollbar{
+    width: 1px;
+}
+#fet_tip{
+    text-align: left;
+    padding: 25px;
+    background-color: #00ff372f;
+}
+#fet_tip:hover{
+    background-color: #00ff3752;
+    color:rgba(38, 22, 99, 0.493);
+}
+#f_list_0, #f_list_1, #f_list_2, #e_list_0, #e_list_1, #e_list_2,#t_list_0, #t_list_1{
+    display: none;
+    background-color: rgb(202, 247, 200);
+    padding: 10px;
+    border: black solid 1px;
+    position: fixed;
+    top: 0px;
+    z-index: 2;
+    text-indent: 5%;
+    list-style-type: none;
+    text-align: left;
+}
+
+.prev, .next{
+    padding: 20px;
+    background-color: #00ff37fe;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    margin: 20px;
+    position: absolute;
+}
+.prev:hover, .next:hover{
+    background-color: #00ff88;
+    cursor: pointer;
+}
+/* #index-1, #index-2{
+    display: none;
+} */
+#index-header{
+    text-align: center;
+    border-bottom: black solid 1px;
+    padding: 10px;
+}
+.prev{
+    left: 0px;
+}
+.next{
+    right: 0px;
+}
+#F_data{
+    display: none;
+}
+#toggole-results svg{
+    height: 50px;
+}
+#toggle-results{
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    margin: 15px;
+    padding: 20px;
+    display: none;
+    z-index:1;
+}
+
+.FET_0, .veggieFruit{
+    border-bottom: 1px solid black;
+}
+#heading-m{
+    display: none;
+   }
+#CFP-form{
+    display: none;
+    text-align: center;
+}
+.foot{
+    background-color: black;
+    color: white;
+    padding: 25px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    /**form.desktop-form {
+        display: none;
+      }**/
+    .b{
+        width: 100%;
+    }
+    .chart{
+        height: 280px;
+        z-index: 0;
+    }
+    .chart-margin{
+        margin: 0px;
+    }
+
+    .form-design{
+        margin: 10px;
+    }
+   .logo{
+       display: none;
+   }
+   .logo-m{
+       position: fixed;
+       left: 0px;
+       bottom: 0px;
+       display: block;
+       background-color: #ba0000;
+       padding: 10px;
+       opacity: .5;
+       z-index: 1;
+       }
+   .logo-m:hover{
+       opacity: 1;
+   }
+   .site-header{
+       position: fixed;
+       top: 2px;
+       left: 2px;
+       width: 70px;
+       height: 70px;
+       cursor: pointer;
+       border-radius: 20px;
+       background-color: rgba(0, 0, 0, 0.516);
+   }
+   .site-header:hover{
+    background-color: black;
+   }
+   #heading-d{
+       display: none;
+   }
+   #heading-m{
+    display: block;
+    font-size: 22px;
+    text-align: center;
+    margin: 10px;
+    border-bottom: 1px solid white;
+   }
+}
